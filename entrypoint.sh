@@ -45,4 +45,4 @@ HTTP_PORT=$(sed -n "2p" build.info)
 HTTPS_PORT=$(sed -n "3p" build.info)
 TUNNEL_PORT=$(sed -n "4p" build.info)
 
-./bin/ngrokd -tlsKey=device.key -tlsCrt=device.crt -domain="$DOMAIN" -httpAddr=":$HTTP_PORT" -httpsAddr=":$HTTPS_PORT" -tunnelAddr=":$TUNNEL_PORT"
+./bin/ngrokd -domain="$DOMAIN" -httpAddr=":$HTTP_PORT" -httpsAddr=":$HTTPS_PORT" -tunnelAddr=":$TUNNEL_PORT"
