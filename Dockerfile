@@ -11,7 +11,7 @@ COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh \
   && yum install -y epel-release \
   && yum install -y golang openssl \
-  && curl -o /tmp/ngrok.tar.gz "http://files.git.oschina.net/group1/M00/07/11/PaAvDFyZwgKAM7opAK7VK6NTB802069.gz?attname=ngrok.tar.gz" \
+  && cp ngrok.tar.gz /tmp/ \
   && tar -zxvf /tmp/ngrok.tar.gz -C /usr/local \
   && rm -rf /tmp/ngrok.tar.gz
 
