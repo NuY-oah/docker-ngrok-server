@@ -6,6 +6,7 @@ MAINTAINER jueying hhbvictory@163.com
 
 # 复制脚本文件到容器目录中
 COPY entrypoint.sh /sbin/entrypoint.sh
+COPY ngrok.tar.gz /tmp/ngrok.tar.gz
 
 # 运行指令
 RUN chmod 755 /sbin/entrypoint.sh \
