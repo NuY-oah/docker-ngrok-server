@@ -12,6 +12,8 @@ if [ ! -f "build.info" ]; then
   HTTPS_PORT=$3
   TUNNEL_PORT=$4
 
+  make release-server
+
   # save build info to file
   echo "$DOMAIN" >> build.info
   echo "$HTTP_PORT" >> build.info
