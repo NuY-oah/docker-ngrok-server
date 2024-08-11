@@ -1,5 +1,5 @@
 # 指定基础镜像
-FROM centos:7
+FROM golang:1.17.8-alpine
 
 # 维护者信息
 MAINTAINER jueying hhbvictory@163.com
@@ -9,9 +9,7 @@ COPY entrypoint.sh /sbin/entrypoint.sh
 
 # 运行指令
 RUN chmod 755 /sbin/entrypoint.sh \
-  && yum install -y epel-release \
-  && yum install -y golang openssl \
-  && cp ngrok.tar.gz /tmp/ \
+  && apk add --no-cache git make openssl \
   && tar -zxvf /tmp/ngrok.tar.gz -C /usr/local \
   && rm -rf /tmp/ngrok.tar.gz
 
